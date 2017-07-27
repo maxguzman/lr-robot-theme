@@ -5,7 +5,17 @@
 	<title>${the_title} - ${company_name}</title>
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 	<@liferay_util["include"] page=top_head_include />
-	
+	<link rel="stylesheet" href="${css_folder}/owl.carousel.min.css">
+	<link rel="stylesheet" href="${css_folder}/owl.theme.default.min.css">
+	<style type="text/css">
+		.owl-dots {
+			position: relative;
+			z-index: 1;
+			margin-top: -30px !important;
+			left: 20px;
+			margin-left: auto;
+		}
+	</style>
 </head>
 
 <body class="${css_class} homepage">
@@ -18,8 +28,10 @@
 			<header id="header">
 				<div class="logo container">
 					<div>
-						<h1><a href="${site_default_url}" id="logo">Robot Theme</a></h1>
-						<p>For general purposes on Liferay Portal</p>
+						<h1><a href="${site_default_url}" id="logo">Robot</a></h1>
+						<#assign url = theme_display.getURLCurrent() /><br>
+						<#assign url2 = theme_display.getURLHome() />
+						<p>For general purposes on Liferay Portal ${url}</p>
 					</div>
 				</div>
 			</header>
@@ -29,6 +41,15 @@
 				<#include "${full_templates_path}/navigation.ftl" />
 			</#if>
 			
+		<!-- Carousel -->	
+			<#--  <#if theme_display.getURLHome() == theme_display.getURLCurrent()>  -->
+				<div class="owl-carousel owl-theme">
+					<div><img src="${images_folder}/background1.jpg" alt=""></div>
+					<div><img src="${images_folder}/background2.jpg" alt=""></div>
+					<div><img src="${images_folder}/background3.jpg" alt=""></div>
+				</div>
+			<#--  </#if>  -->
+
 		<!-- Main Content -->
 			<div id="main-wrapper">
 				<div id="main" class="container">
@@ -96,6 +117,7 @@
 	<script src="${javascript_folder}/skel.min.js"></script>
 	<script src="${javascript_folder}/skel-viewport.min.js"></script>
 	<script src="${javascript_folder}/util.js"></script>
+	<script src="${javascript_folder}/owl.carousel.min.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="${javascript_folder}/dp-main.js"></script>
 	<!-- endinject -->
