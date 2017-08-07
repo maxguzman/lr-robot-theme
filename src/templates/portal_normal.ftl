@@ -31,7 +31,7 @@
 						<h1><a href="${site_default_url}" id="logo">Robot</a></h1>
 						<#assign url = theme_display.getURLCurrent() /><br>
 						<#assign url2 = theme_display.getURLHome() />
-						<p>For general purposes on Liferay Portal ${url}</p>
+						<p>is using Portal</p>
 					</div>
 				</div>
 			</header>
@@ -42,13 +42,13 @@
 			</#if>
 			
 		<!-- Carousel -->	
-			<#--  <#if theme_display.getURLHome() == theme_display.getURLCurrent()>  -->
+			<#if theme_display.getURLCurrent() == "/" || theme_display.getURLCurrent()=="/web/guest/home">
 				<div class="owl-carousel owl-theme">
 					<div><img src="${images_folder}/background1.jpg" alt=""></div>
 					<div><img src="${images_folder}/background2.jpg" alt=""></div>
 					<div><img src="${images_folder}/background3.jpg" alt=""></div>
 				</div>
-			<#--  </#if>  -->
+			</#if>
 
 		<!-- Main Content -->
 			<div id="main-wrapper">
