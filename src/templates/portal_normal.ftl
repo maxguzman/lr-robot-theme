@@ -27,12 +27,12 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="logo container">
+
 					<div>
 						<h1><a href="${site_default_url}" id="logo">Robot</a></h1>
-						<#assign url = theme_display.getURLCurrent() /><br>
-						<#assign url2 = theme_display.getURLHome() />
 						<p>is using Portal</p>
 					</div>
+					
 				</div>
 			</header>
 
@@ -42,7 +42,9 @@
 			</#if>
 			
 		<!-- Carousel -->	
-			<#if theme_display.getURLCurrent() == "/" || theme_display.getURLCurrent()=="/web/guest/home">
+			<#assign currentUrl = theme_display.getURLCurrent() /><br>
+			<#assign urlHome = theme_display.getURLHome() /> <#-- just in case -->
+			<#if currentUrl == "/" || currentUrl=="/web/guest/home">
 				<div class="owl-carousel owl-theme">
 					<div><img src="${images_folder}/background1.jpg" alt=""></div>
 					<div><img src="${images_folder}/background2.jpg" alt=""></div>
